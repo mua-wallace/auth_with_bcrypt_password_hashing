@@ -1,0 +1,14 @@
+{%extends 'base.html'%}
+{%block content%}
+<nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand">Navbar</a>
+
+      <div class="navbar-nav">
+        <a class="nav-link active text-danger" aria-current="page" href="{{url_for('login')}}">Logout</a>
+        
+      </div>
+    </div>
+  </nav>
+<h1>Welcome Your Name</h1>
+{%endblock%}

@@ -1,0 +1,36 @@
+{% extends "base.html" %} {%block content%}
+<div class="container w-50 mt-5">
+  <form action='/process' method="POST" class="row g-3 bg-dark text-light p-5">
+    <div class="col-md-12">
+      <label for="inputEmail4" class="form-label">Full Names</label>
+      <input type="text" class="form-control" id="inputEmail4" />
+    </div>
+    <div class="col-md-12">
+      <label for="inputPassword4" class="form-label">Email</label>
+      <input type="email" class="form-control" id="inputPassword4" />
+    </div>
+    <div class="col-md-12">
+      <label for="inputPassword4" class="form-label">Date of Birth</label>
+      <input type="date" class="form-control" id="inputPassword4" />
+    </div>
+    <div class="col-md-12">
+      <label for="inputPassword4" class="form-label">Password</label>
+      <input type="password" class="form-control" id="inputPassword4" />
+    </div>
+
+    <div class="col-12">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="gridCheck" />
+        <label class="form-check-label" for="gridCheck"> Check me out </label>
+      </div>
+    </div>
+    <div class="col-12">
+      <button type="submit" class="btn btn-success">Register</button>
+    </div>
+    <div>
+        <small>Already have account</small>
+        <a href="{{url_for('login')}}">Login</a>
+    </div>
+  </form>
+</div>
+{%endblock%}
