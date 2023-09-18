@@ -1,14 +1,32 @@
 {% extends "base.html" %} {%block content%}
 <div class="container w-50 mt-5">
-  <form action ='/process' method="POST" class="row g-3 bg-dark text-light p-5">
+  <form action ='/process-login' method="POST" class="row g-3 bg-dark text-light p-5">
+    {% with messages = get_flashed_messages(category_filter=['login']) %}
+      <!-- declare a variable called messages -->
+      {% if messages %}
+      <!-- check if there are any messages -->
+      {% for message in messages %}
+      <!-- loop through the messages -->
+      <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <small class="text-danger">{{message}}</small>
+        <!-- display each message in a paragraph tag -->
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="alert"
+          aria-label="Close"
+        ></button>
+      </div>
+
+      {% endfor %} {% endif %} {% endwith %}
     <div class="col-md-12">
       <label for="inputPassword4" class="form-label">Email</label>
-      <input type="password" class="form-control" id="inputPassword4" />
+      <input type="email" name='email' class="form-control" id="inputPassword4" />
     </div>
    
     <div class="col-md-12">
       <label for="inputPassword4" class="form-label">Password</label>
-      <input type="password" class="form-control" id="inputPassword4" />
+      <input type="password" name='password' class="form-control" id="inputPassword4" />
     </div>
     <div class="col-12">
       <button type="submit" class="btn btn-success">Login</button>

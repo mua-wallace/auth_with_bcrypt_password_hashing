@@ -1,14 +1,21 @@
-{%extends 'base.html'%}
-{%block content%}
+{%extends 'base.html'%} {%block content%}
 <nav class="navbar navbar-light bg-light">
-    <div class="container-fluid">
-      <a class="navbar-brand">Navbar</a>
+  <div class="container-fluid">
+    <a class="navbar-brand">Navbar</a>
 
-      <div class="navbar-nav">
-        <a class="nav-link active text-danger" aria-current="page" href="{{url_for('login')}}">Logout</a>
-        
-      </div>
+    <div class="navbar-nav">
+      <a
+        class="nav-link active text-danger"
+        aria-current="page"
+def logout():
+        href="{{url_for('logout')}}"
+        >Logout</a
+      >
     </div>
-  </nav>
-<h1>Welcome Your Name</h1>
+  </div>
+</nav>
+<h1>Welcome {{user.name}}</h1>
+<p>Email: {{user.email}}</p>
+<p>Date of birth: {{user.dob}}</p>
+<p>Hashed Password: {{user.password}}</p>
 {%endblock%}
